@@ -2,13 +2,18 @@ package com.luosenen.huelibraryautobooked;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.res.ResourcesCompat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.SaveListener;
 
@@ -17,14 +22,19 @@ public class LoginActivity extends Activity {
     private EditText userName,password;
     private ProgressBar bar;
     Button but_login,but_to_register;
-
+    private TextView welcome_txt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init();
-
+        if (MyUser.isLogin()) {
+            MyUser user = BmobUser.getCurrentUser(MyUser.class);
+            Toast.makeText(this, "已经登录：" + user.getUsername(), Snackbar.LENGTH_LONG).show();
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
         but_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,6 +89,9 @@ public class LoginActivity extends Activity {
         bar = findViewById(R.id.login_bar);
         but_login = findViewById(R.id.login);
         but_to_register = findViewById(R.id.to_register);
+        welcome_txt = findViewById(R.id.login_text);
+        Typeface typeface = ResourcesCompat.getFont(this, R.font.font);
+        welcome_txt.setTypeface(typeface);
 
     }
 

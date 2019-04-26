@@ -6,8 +6,8 @@ android {
         applicationId "com.luosenen.huelibraryautobooked"
         minSdkVersion 15
         targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -36,5 +36,9 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.5'
     implementation 'com.squareup.okhttp3:okhttp:3.12.0'
     implementation 'cn.bmob.android:http-legacy:1.0'
+
     implementation 'org.jsoup:jsoup:1.11.3'
+    implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    implementation files('libs/Bmob_Push_1.0.2_20180611.jar')
+
 }

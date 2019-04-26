@@ -42,6 +42,11 @@ public class RegistryActivity extends Activity {
                 }
                 final MyUser user = new MyUser();
                 user.setUsername(ids);
+                user.setBookedTime("0");
+                user.setFloor("0");
+                user.setSeat_X("0");
+                user.setSeat_Y("0");
+                user.setIsBooked("0");
                 user.setPassword(passwords);
                 user.signUp(new SaveListener<MyUser>() {
                     @Override

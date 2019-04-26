@@ -4,19 +4,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="10dp"
+        android:id="@+id/login_text"
+        android:text="财大抢座登录中心"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:layout_below="@id/login_text"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/app_icon"
+        android:src="@mipmap/library"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
     <EditText
+        android:layout_below="@id/app_icon"
         android:id="@+id/login_user_name"
-        android:hint="账号"
+        android:hint="学号"
+        android:layout_margin="30dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@drawable/edit"
+        android:inputType="number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <EditText
         android:id="@+id/login_password"
+        android:inputType="textPassword"
         android:layout_below="@id/login_user_name"
         android:hint="密码"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="@drawable/edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <Button
+        android:layout_margin="30dp"
         android:id="@+id/to_register"
         android:hint="注册"
         android:layout_alignParentLeft="true"
@@ -26,6 +57,7 @@
 
     <Button
         android:id="@+id/login"
+        android:layout_margin="30dp"
         android:hint="登陆"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/login_password"

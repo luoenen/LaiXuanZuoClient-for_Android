@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_margin="30dp"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:hint="请输入系统Cookie"
+        android:background="@drawable/edit"
+        android:inputType="textPassword"
+        android:id="@+id/weChat_cookie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/start"
+        android:hint="开始准备抢座"
+        android:layout_below="@id/weChat_cookie"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_margin="10dp"
+        android:id="@+id/show_result"
+        android:hint="抢座结果："
+        android:layout_below="@id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/result"
+        android:text="暂未抢座"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/show_result"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/timer"
+        android:text="倒计时0"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/result"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/get_cookie"
+        android:layout_below="@id/timer"
+        android:text="获取系统Cookie教程?"
+        android:textSize="12sp"
+        android:autoLink="all"
+        android:layout_margin="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
